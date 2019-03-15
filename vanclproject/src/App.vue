@@ -1,15 +1,11 @@
 <template>
   <div id="app">
     <div id="nav_bottom">
-        <a href="javascript:;"><Icon type="ios-home" size="40" color="red"/></a>
-        <a href="javascript:;"><Icon type="md-apps" size="40" color="black"/></a>
-        <a href="javascript:;"><Icon type="md-videocam" size="40" color="black"/></a>
-        <el-badge :value="3" class="item">
-          <a href="javascript:;"><Icon type="md-cart" size="40" color="black"/></a>
+        <el-badge :value="typeface.num"  class="item" v-for="(typeface,idx) in typefaces" :key="typeface.name">
+          <a href="javascript:;"><Icon :type="typeface.type" size="40"  @click="color(idx)" :color="typeface.color"/></a>
         </el-badge>
-        <a href="javascript:;"><Icon type="md-contact" size="40" color="black"/></a>
     </div>
-    <cart></cart>
+    
   </div>
 </template>
 
@@ -27,6 +23,43 @@ import cart from './components/Cart.vue';
 
 export default {
   name: 'app',
+  data(){
+    return {
+      typefaces:[{
+        type:'ios-home',
+        color:'red',
+        num:''
+      },
+      {
+        type:'md-apps',
+        color:'black',
+        num:''
+      },
+      {
+        type:'md-videocam',
+        color:'black',
+        num:''
+      },
+      {
+        type:'md-cart',
+        color:'black',
+        num:'1'
+      },
+      {
+        type:'md-contact',
+        color:'black',
+        num:''
+      }
+      ]
+    }
+  },
+  methods:{
+    color(idx){
+      // console.log(this.typefaces.length);
+      this.typefaces.map(typeface=>typeface.color='black');
+      this.typefaces[idx].color='red';
+    }
+  },
   components: {
     cart
   }
@@ -39,11 +72,8 @@ export default {
     display: block;
     width:100%;
     bottom:0;
-    /* display: flex; */
-    /* flex:5; */
   }
-  #nav_bottom a{
-    display: inline-block;
+  #nav_bottom>div{
     text-align: center;
     width: 20%;
   }
