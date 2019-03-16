@@ -5,7 +5,7 @@
           <a href="javascript:;"><Icon :type="typeface.type" size="40"  @click="color(idx)" :color="typeface.color"/></a>
         </el-badge>
     </div>
-    
+    <home></home>
   </div>
 </template>
 
@@ -20,6 +20,7 @@ Vue.use(iView);
 Vue.use(elementUI);
 
 import cart from './components/Cart.vue';
+import home from './components/Home.vue';
 
 export default {
   name: 'app',
@@ -61,7 +62,8 @@ export default {
     }
   },
   components: {
-    cart
+    cart,
+    home
   }
 }
 </script>
