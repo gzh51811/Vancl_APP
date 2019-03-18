@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <category></category>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+//引入
+import Vue from 'vue';
+import elementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(elementUI);
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
+
+import category from './components/CategoryPage';
+import channel from './components/ChannelPage';
+import detail from './components/DetailPage';
+import list from './components/ListPage';
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  name : 'app',
+  components : {
+    category,
+    channel,
+    detail,
+    list
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
