@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div id="nav_bottom">
-        <el-badge :value="typeface.num"  class="item" v-for="(typeface,idx) in typefaces" :key="typeface.name">
-          <a href="javascript:;"><Icon :type="typeface.type" size="40"  @click="color(idx)" :color="typeface.color"/></a>
+        <el-badge :value="typeface.num"  class="item" v-for="(typeface,idx) in typefaces" :key="typeface.name" >
+          <a href="javascript:;" @click="goto(typeface)"><Icon :type="typeface.type" size="40"  @click="color(idx)" :color="typeface.color"/></a>
         </el-badge>
     </div>
-    <cart></cart>
+    <!-- <cart></cart> -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -29,7 +30,8 @@ export default {
       typefaces:[{
         type:'ios-home',
         color:'red',
-        num:''
+        num:'',
+        name:'Home'
       },
       {
         type:'md-apps',
@@ -44,7 +46,8 @@ export default {
       {
         type:'md-cart',
         color:'black',
-        num:'1'
+        num:'1',
+        name:'Cart'
       },
       {
         type:'md-contact',
@@ -59,6 +62,10 @@ export default {
       // console.log(this.typefaces.length);
       this.typefaces.map(typeface=>typeface.color='black');
       this.typefaces[idx].color='red';
+    },
+    goto(typeface){
+        // console.log('App:',this);
+        this.$router.push({name:typeface.name});
     }
   },
   components: {
