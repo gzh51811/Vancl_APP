@@ -5,7 +5,7 @@
           <a href="javascript:;"><Icon :type="typeface.type" size="40"  @click="color(idx)" :color="typeface.color"/></a>
         </el-badge>
     </div>
-    <home></home>
+    <cart></cart>
   </div>
 </template>
 
@@ -74,6 +74,8 @@ export default {
     display: block;
     width:100%;
     bottom:0;
+    z-index: 999;
+    background: #ffffff;
   }
   #nav_bottom>div{
     text-align: center;
