@@ -15,7 +15,7 @@ const MongoClient = mongodb.MongoClient;
 
 //mongodb的database地址和名字
 const database_url = 'mongodb://localhost:27017';
-const database_name = 'BMSystem';
+const database_name = 'Vancl';
 
 //连接MongoDB
 async function connect(){
