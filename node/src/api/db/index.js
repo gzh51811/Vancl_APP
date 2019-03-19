@@ -64,12 +64,12 @@ exports.update = async (colName,query,newData)=>{
 }
 
 //查
-exports.find = async (colName,query)=>{
+exports.find = async (colName,query,qry='id',num=1,page=1,quantit=6)=>{
 
     let {db,client} = await connect();
 
     let collection = db.collection(colName);
-    let res = await collection.find(query).toArray();
+    let res = await collection.find(query).sort({[qry]:num}).skip((page-1)*quantit).limit(quantit).toArray();
 
     client.close();
 

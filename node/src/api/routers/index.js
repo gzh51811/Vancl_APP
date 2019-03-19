@@ -8,6 +8,7 @@ let router = new Router();
 
 //引入页面路由
 const loginRouter = require('./login');
+const goodsRouter = require('./goods');
 
 //koaBody中间件，设置配置
 router.use(koaBody({
@@ -33,5 +34,6 @@ router.use(koaBody({
 
 
 router.use('/login',loginRouter.routes());
+router.use('/goods',goodsRouter.routes());
 
 module.exports = router;
