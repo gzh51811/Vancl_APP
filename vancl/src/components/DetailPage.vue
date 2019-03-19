@@ -50,6 +50,9 @@
         <footer>
             <div class="showcart">
                 <Icon type="ios-cart-outline" size="22"/>
+                <Badge :count="1" type="error">
+                    
+                </Badge>
             </div>
             <div class="addcart">
                 加入购物车
@@ -230,9 +233,10 @@ export default {
     .changecolor{
         color: #b81c22;
     }
-    /* footer{
+   
+    footer{
         width: 100%;
-        height: 1.875rem;
+        height: 2.5rem;
         border-top: .0625rem solid #aeaeae;
         position: fixed;
         bottom: 0;
@@ -244,13 +248,13 @@ export default {
         background: #fff;
         float: left;
         text-align: center;
-        line-height: 1.875rem;
+        line-height: 2.5rem;
     }
     .addcart{
         background: #b81c22;
         float: left;
         text-align: center;
-        line-height: 1.875rem;
+        line-height: 2.5rem;
         color: #fff;
-    } */
+    }
 </style>

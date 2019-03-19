@@ -14,6 +14,11 @@
                     <p>679元</p>
                 </li>
             </ul>
+            <el-pagination
+             small 
+                layout="prev, pager, next"
+                :total="20  ">
+            </el-pagination>
         </main>
     </div>
 </template>
