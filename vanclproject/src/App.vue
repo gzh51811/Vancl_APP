@@ -36,7 +36,8 @@ export default {
       {
         type:'md-apps',
         color:'black',
-        num:''
+        num:'',
+        name:'CategoryPage'
       },
       {
         type:'md-videocam',
