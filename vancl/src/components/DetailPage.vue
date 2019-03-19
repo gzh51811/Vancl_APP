@@ -24,11 +24,11 @@
                 <div class="size-box">
                     <h3 class="tit">选择颜色</h3>
                     <p class="color">
-                        <span v-for="(color,idx) in colors" :class="{'size-color':true, active:active === idx}" @click="change(idx)" :key="idx">{{color}}</span>
+                        <span v-for="(color,id) in colors" :class="{'size-color':true, active:active === id}" @click="color(id)" :key="id">{{color}}</span>
                     </p>
                     <h3 class="tit">尺寸选择</h3>
                     <p class="size">
-                        <span v-for="(size,idx) in sizes" :class="{'size-color':true, ac:ac === idx}" @click="change(idx)" :key="idx">{{size}}</span>
+                        <span v-for="(size,num) in sizes" :class="{'size-color':true, active:active === num}" @click="color(num)" :key="num">{{size}}</span>
                     </p>
                     <h3 class="tit">购买数量</h3>
                     <p class="changecount">
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <ul class="paging">
-                <li v-for="(word,idx) in words" :class="{changecolor:changecolor===idx}" @mouseover="color(idx)" :key="idx">{{word}}</li>
+                <li v-for="(word,idx) in words" :class="{changecolor:changecolor===idx}" @click="color(idx)" :key="idx">{{word}}</li>
             </ul>
             <div class="picbox">
                 <div class="picture" v-for="(pic,idx) in pics" :key="idx">
@@ -47,14 +47,14 @@
                 </div>
             </div>
         </main>
-        <!-- <footer>
+        <footer>
             <div class="showcart">
                 <Icon type="ios-cart-outline" size="22"/>
             </div>
             <div class="addcart">
                 加入购物车
             </div>
-        </footer> -->
+        </footer>
     </div>
 </template>
 
@@ -68,18 +68,19 @@ export default {
             words:["商品详情","评论","咨询"],
             changecolor:0,
             active:0,
-            ac:0,
             pics:["tu.jpg","tu1.jpg","tu2.jpg","tu3.jpg","tu4.jpg","mote.jpg","tu5.jpg","tu6.jpg","tu7.jpg","tu8.jpg","tu9.jpg",
                 "tu10.jpg","mote2.jpg","tu11.jpg","tu12.jpg","tu13.jpg","tu14.jpg","tu15.jpg","tu16.jpg","tu17.jpg","tu18.jpg",
                 "tu19.jpg","tu20.jpg","tu21.jpg","tu22.jpg","tu23.jpg","tu24.jpg","tu25.jpg"]
         }
     },
     methods:{
-        color(idx){
+        color(idx,num,id){
             this.changecolor = idx;
+            this.active = num;
+            this.active = id;
         },
-        change(idx){
-            this.active = idx;
+        changecount(){
+            
         }
     }
 }
