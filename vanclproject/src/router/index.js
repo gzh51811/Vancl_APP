@@ -6,6 +6,7 @@ import Cart from '../components/Cart.vue';
 import CategoryPage from '../components/CategoryPage.vue';
 import DetailPage from '../components/DetailPage.vue';
 import ListPage from '../components/ListPage.vue';
+import ChannelPage from '../components/ChannelPage.vue';
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ let router = new VueRouter({
             path: '/ListPage',
             component: ListPage
         },
+        {
+            name: 'ChannelPage',
+            path: '/ChannelPage',
+            component: ChannelPage
+        }
     ]
 });
 

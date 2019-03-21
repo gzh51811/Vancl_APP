@@ -20,8 +20,10 @@ import 'iview/dist/styles/iview.css';
 Vue.use(iView);
 Vue.use(elementUI);
 
-import cart from './components/Cart.vue';
-import home from './components/Home.vue';
+import axios from "axios";
+
+// 把axios设置到Vue的原型对象上，方便在任意组件中使用
+Vue.prototype.$axios = axios;
 
 export default {
   name: 'app',
@@ -42,7 +44,8 @@ export default {
       {
         type:'md-videocam',
         color:'black',
-        num:''
+        num:'',
+        name:'ChannelPage'
       },
       {
         type:'md-cart',
@@ -70,8 +73,7 @@ export default {
     }
   },
   components: {
-    cart,
-    home
+
   }
 }
 </script>

@@ -10,8 +10,8 @@ router.get('/list',async (ctx,next)=>{
     //qry：按什么排序  num：1升序、-1降序  page：第几页  quantit：每页多少条记录
     let {qry,num,page,quantit} = ctx.query;
 
-    let res =await db.find('goods',{},'id',1);
-    // console.log(res)
+    let res =await db.find('goods',{},qry,num,page,quantit);
+    // console.log(qry,num,page,quantit)
     ctx.body = res;
 });
 
