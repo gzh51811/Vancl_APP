@@ -9,17 +9,9 @@
           <li v-for="(kind, idx) in kinds" :class="{active: active === idx }" @click="change(idx)" :key="idx">{{kind}}</li>
         </ul>
         <div class="content">
-          <!-- <div class="box" v-for="(content, idx) in contents" v-show="active === idx" :key="idx">
-
-          </div> -->
-          <div class="box">
-            <p>羊毛衣</p>
-          </div>
-          <div class="box">
-            <p>羊毛衣</p>
-          </div>
-          <div class="box">
-            <p>羊毛衣</p>
+          <div v-for="(feilei,idx) in feileis" class="box" @click="goto('ListPage')" :key="idx">
+            <img :src="`./img/${feilei.imgurl}`" alt="">
+            <p>{{feilei.title}}</p>
           </div>
         </div>
       </main>
@@ -31,14 +23,57 @@ export default {
   data() {
       return {
         kinds: ["推荐", "男装","女装","男鞋","女鞋","袜品","家居","童装","内衣"],
+        feileis:[
+          {
+            imgurl:"fenlei1.jpg",
+            title:"免烫衬衫"
+          },{
+            imgurl:"fenlei2.jpg",
+            title:"T恤"
+          },{
+            imgurl:"fenlei3.jpg",
+            title:"卫衣"
+          },{
+            imgurl:"fenlei4.jpg",
+            title:"休闲衬衫"
+          },{
+            imgurl:"fenlei5.jpg",
+            title:"POLO衫"
+          },{
+            imgurl:"fenlei6.jpg",
+            title:"短袖衬衫"
+          },{
+            imgurl:"fenlei7.jpg",
+            title:"水柔棉"
+          },{
+            imgurl:"fenlei8.jpg",
+            title:"麻衬衫"
+          },{
+            imgurl:"fenlei9.jpg",
+            title:"针织衫"
+          }],
         active: 0
       }
     },
   methods:{
     change(idx){
       this.active = idx;
+    },
+    goto(typeface){
+        this.$router.push(typeface);
     }
-  }
+  },
+  // created() {
+  //   this.$axios.get("https://m.vancl.com/Product/AjaxSonCateList",{
+  //       params: {
+  //         cateId:'',
+  //         np:10366,
+  //         cateref:''
+  //       }
+  //     }).then(res => {
+  //       console.log(res);
+  //     });
+  // }
 }
 </script>
 
@@ -90,10 +125,12 @@ export default {
   }
   .tab .content .box{
     width: 31%;
-    background: pink;
     float: left;
     margin-left: .3125rem;
     padding: .625rem;
     text-align: center;
+  }
+  .tab .content img{
+    width: 100%;
   }
 </style>

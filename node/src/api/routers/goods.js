@@ -10,8 +10,8 @@ router.get('/list',async (ctx,next)=>{
     //qry：按什么排序  num：1升序、-1降序  page：第几页  quantit：每页多少条记录
     let {qry,num,page,quantit} = ctx.query;
 
-    let res =await db.find('goods',{},qry,num,page,quantit);
-    // console.log(qry,num,page,quantit)
+    console.log(qry,num,page,quantit)
+    let res =await db.find('goods',{},qry,num*1,page*1,quantit*1);
     ctx.body = res;
 });
 
@@ -19,7 +19,7 @@ router.get('/list',async (ctx,next)=>{
 router.get('/details',async (ctx,next)=>{
     let {id} = ctx.query;
 
-    let res =await db.find('goods',{id});
+    let res =await db.find('goods',{id:id*1});
     // console.log(res)
     ctx.body = res;
 });

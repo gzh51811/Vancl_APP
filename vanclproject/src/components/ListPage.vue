@@ -9,9 +9,10 @@
                 <li v-for="(paixu,idx) in paixus" :class="{active: active === idx }" @click="change(idx)" :key="idx">{{paixu}}</li>
             </ul>
             <ul class="goodslist">
-                <li>
-                    <p>凡客xxxx衣服</p>
-                    <p>679元</p>
+                <li v-for="(goodslist,idx) in goodslists" @click="goto(goodslist.id)" :key="idx">
+                    <img width='100%' height='100%' :src="`./img/${goodslist.imgurl}`" alt="">
+                    <p>{{goodslist.name}}</p>
+                    <p>{{goodslist.price}}元</p>
                 </li>
             </ul>
             <el-pagination
@@ -28,14 +29,30 @@ export default {
     data(){
         return{
             paixus:["新品","销量","评价","价格"],
-            active:0
+            active:0,
+            goodslists:''
         }
     },
     methods:{
         change(idx){
         this.active = idx;
+        },
+        goto(id){
+            this.$router.push({name:'DetailPage',query:{id},params:{id}});
         }
-    }
+    },
+    created(){
+        this.$axios.get("http://localhost:1998/goods/list", {
+            params:{
+                qry : 'id',
+                num:1,
+                page:1,
+                quantit:6
+            }
+      }).then(res => {
+        this.goodslists=res.data;
+      });
+  }
 }
 </script>
 
@@ -73,14 +90,16 @@ export default {
   }
   .goodslist {
       width: 100%;
+      list-style: none;
+      overflow: hidden;
   }
   .goodslist li {
       width: 50%;
       background: #eee;
+      float: left;
   }
   .goodslist li p{
       text-align: center;
       line-height: 2;
-      
   }
 </style>
