@@ -1,0 +1,35 @@
+{
+  "name": "Nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "connect-multiparty": "^2.2.0",
+    "http-proxy-middleware": "^0.19.1",
+    "jsonwebtoken": "^8.5.0",
+    "koa": "^2.7.0",
+    "koa-body": "^4.0.8",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.5",
+    "koa2-cors": "^2.0.6",
+    "mongodb": "^3.1.13",
+    "multer": "^1.4.1",
+    "request": "^2.88.0",
+    "tar": "^4.4.8",
+    "util": "^0.11.1",
+    "ws": "^6.1.4"
+  }
+}
