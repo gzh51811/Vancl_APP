@@ -174,8 +174,12 @@ main{
     width:1rem;
     height: 1rem;
 }
+#content>div div{
+    width: 100%;
+}
 #content>div div p{
     margin: .25rem 0;
+    width: 100%;
 }
 #content>div div span{
     margin-right: 2.25rem
