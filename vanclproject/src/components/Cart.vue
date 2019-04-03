@@ -195,7 +195,7 @@ main{
 }
 #sum{
     position: fixed;
-    bottom: 2.5rem;
+    bottom: 0;
     width: 100%;
     display: flex;
     background: floralwhite;

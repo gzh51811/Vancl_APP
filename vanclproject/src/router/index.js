@@ -7,6 +7,9 @@ import CategoryPage from '../components/CategoryPage.vue';
 import DetailPage from '../components/DetailPage.vue';
 import ListPage from '../components/ListPage.vue';
 import ChannelPage from '../components/ChannelPage.vue';
+import Login from '../components/Login.vue';
+import Reg from '../components/Reg.vue';
+import Personal from '../components/Personal.vue';
 
 Vue.use(VueRouter);
 
@@ -41,6 +44,21 @@ let router = new VueRouter({
             name: 'ChannelPage',
             path: '/ChannelPage',
             component: ChannelPage
+        },
+        {
+            name: 'Login',
+            path: '/Login',
+            component: Login
+        },
+        {
+            name: 'Reg',
+            path: '/Reg',
+            component: Reg
+        },
+        {
+            name: 'Personal',
+            path: '/Personal',
+            component: Personal
         }
     ]
 });

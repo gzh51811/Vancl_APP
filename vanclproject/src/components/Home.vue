@@ -85,9 +85,14 @@
                 <h2>京ICP证100557号</h2>
             </div>
         </main>
+        <footer>
+            <Nav/>
+        </footer>
     </div>
 </template>
 <script>
+import Nav from './Nav.vue';
+
 export default {
     data() {
         return {
@@ -204,6 +209,9 @@ export default {
                 '2019_3_6_17_37_15_2886_320x605.jpg'
             ]
         }
+    },
+    components:{
+        Nav
     },
     methods:{
         touchStart:function(ev) {
@@ -363,5 +371,9 @@ main{
     line-height: 1;
     font-size: 1.2em;
 }
+/* footer{
+    position: fixed;
+    bottom: 0;
+} */
 </style>
 
